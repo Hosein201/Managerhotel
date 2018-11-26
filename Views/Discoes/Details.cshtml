@@ -1,0 +1,58 @@
+﻿@model Managerhotel.Models.Disco
+
+@{
+    ViewBag.Title = "دیسکو";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationnumberDc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservationnumberDc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drinking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drinking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attendance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attendance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DiscoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

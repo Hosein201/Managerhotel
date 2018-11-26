@@ -17,25 +17,180 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("هتل تفریحی نفس", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="yellowcoloertext">@Html.ActionLink("خانه", "Index", "Home")</li>
+                    <li class="yellowcoloertext">@Html.ActionLink("درباره ما", "About", "Home")</li>
+                    <li class="yellowcoloertext">@Html.ActionLink("اعضا", "Contact", "Home")</li>
+                    <li class="nav-item dropdown ml-auto ">
+                        <a class="nav-link dropdown-toggle yellowcoloertext" data-toggle="dropdown">امکانات</a>
+                        <div class="dropdown-menu" \>
+                            <ul>
+                                <li class="dropdown-item yellowcoloertext">@Html.ActionLink("کافی شاپ", "Index", "CoffeeShops")</li>
+                                <li class="dropdown-item yellowcoloertext">@Html.ActionLink("سالن ماساژ", "Index", "Massagesalons")</li>
+                                <li class="dropdown-item yellowcoloertext">@Html.ActionLink("دیسکو", "Index", "Discoes")</li>
+                                <li class="dropdown-item yellowcoloertext">@Html.ActionLink("باشگاه بدن سازی", "Index", "Bodybuildingclubs")</li>
+                            </ul>
+                        </div>
+                    </li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <div class="container-fluid align-center center-block row">
+        <img style="background-image:url(/images/slider-2.jpg)" width="1311" height="500" />
     </div>
+    <div class=" col-md-12 ">
+        @RenderBody()
+    </div>
+    <div class="  col-md-12">
+        @RenderPage("~/Views/Home/About.cshtml")
+
+    </div>
+
+    <div class="row" style="background-color:#f8f8f8">
+        <div class="col-md-12">
+            <div class="block">
+                <center>
+                    <h2 class="heading ">
+
+                        <span>
+
+                            امکانات  هتل نفس
+                        </span>
+
+                    </h2>
+                </center>
+
+
+                <div class="col-md-12">
+                    <div class="col-md-4">
+
+                        <center>
+                            <h3>رستوان سنتی</h3>
+                        </center>
+                        <img src="~/images/sonati.jpg" height="350" width="397">
+                        <p class="text-justify">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <center>
+                            <h3>رستوران مدرن</h3>
+                        </center>
+                        <img src="~/images/modern.jpg" height="350" width="397">
+                        <p class="text-justify">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <center>
+                            <h3>باشگاه بدن سازی اقایان</h3>
+                        </center>
+                        <img src="~/images/body.jpg" height="350" width="397">
+                        <p class="text-justify">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <center>
+                            <h3>باشگاه بدن سازی بانوان</h3>
+                        </center>
+                        <img src="~/images/body1.jpg" height="350" width="397">
+                        <p class="text-justify">غذاهای متنوع و لذیذ بین المللی و ایرانی همراه با سرویس های مطلوب در مجموعه رستورانهای هتل ترنج</p>
+                    </div>
+                    <div class="col-md-4">
+
+                        <center>
+                            <h3>دیسکو Night</h3>
+                        </center>
+                        <img src="~/images/diconigth.jpg" height="350" width="397">
+                        <p class="text-justify">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                    </div>
+                    <div class="col-md-4">
+
+                        <center>
+                            <h3>دسکو Day</h3>
+                        </center>
+                        <img src="~/images/dicoday.jpg" height="350" width="397">
+                        <p class="text-justify ">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <footer class="col-md-12">
+        <div class="row" style="background-color:#363636">
+            <!-- .col-md-4 close -->
+            <div class="col-md-6 yellowcoloertext" style="float:right;">
+
+                <div class="block wow fadeInLeft animated" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInLeft;">
+                    <h3> تماس با ما</h3><hr>
+                    <div class="info">
+
+
+                        <h4><i class="fa fa-map-marker"></i>     ایران-خلیج فارس-جزیره کیش-مجموعه گردشگری و هتل دریایی نفس</h4>
+
+
+
+
+                        <h4>
+                            <i class="fa fa-phone"></i> 07644474114-8
+                        </h4>
+                        <h4>
+                            <i class="fa fa-phone"></i>
+                            09226323605
+                        </h4>
+
+
+
+                        <h4><i class="fa fa-envelope"></i>hoseingolmohammadi193@yahoo.com</h4>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- .col-md-6 close -->
+            <div class="col-md-6 yellowcoloertext ">
+                <div class="block wow fadeInLeft animated" data-wow-delay="700ms" style="visibility: visible; animation-delay: 700ms; animation-name: fadeInLeft;">
+                    <h3>معرفي ما</h3><hr>
+                    <p style="height: inherit;"></p><p style="text-align:justify"><span class="yellowcoloertext" font-family:koodakbold,yekan; font-size:16px">براي آشنايي بيشتر با تنها هتل حامی محیط زیست کشور هر يک از بخشهاي اين مجموعه اقامتي و پذيرايي را بطور اجمال معرفي ميکنيم </span></p>
+
+                    <p></p>
+
+                </div><hr>
+                <div>
+                    <div class="col-md-12">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-skype"></i></a>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                        <a href="#"><i class="fa fa-paper-plane-o"></i></a>
+
+                    </div>
+                    <div class="col-md-12">
+
+                        <hr>
+                        <p>&copy; @DateTime.Now.Year - تمام حقوق قانونی این سایت مربوط به حسین گل محمدی است.</p>&nbsp;
+                        <p class="bani">
+                            طراح سایت حسین گل محمدی
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -10,18 +10,20 @@ namespace Managerhotel.Models
     [Table("Disco", Schema = "Facilities")]
     public class Disco
     {
-        [Key]//PK
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Identity
+       //[Key]//PK
+       // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Identity
         public int DiscoId { get; set; }
-        [Required]
+        [Required,Display(Name =("شماره رزرو"))]
         public int ReservationnumberDc { get; set; }
-        [MaxLength(100)]
+        [MaxLength(100),Display(Name ="منو نوشیدنی")]
         public string Drinking { get; set; }
-        public DateTime Attendance { get; set; }//زمان حضور
-        public DateTime Plan { get; set; }
+        [Display(Name = "تاریخ حضور")]
+        public DateTime Attendancedate { get; set; }//زمان حضور
+        [Display(Name = "زمان حضور")]
+        public DateTime Attendancetime { get; set; }//زمان حضور
         [MaxLength(400)]
+        [Display(Name = "توضیحات ")]
         public string Description { get; set; }
-        public virtual List<ApplicationUser> ApplicationUsers { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual List<ApplicationUser> User { get; set; }
     }
 }

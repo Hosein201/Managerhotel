@@ -1,24 +1,95 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    
+    direction: rtl;
+    font-family: Vazir;
+}
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 0;
+        margin-right: -15px;
+    }
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    float: right;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: right;
+    list-style: none;
+    background-color: #262525 !important;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+ hr  {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 10px;
+    border-top: 1px solid #ff0000 !important;
+ 
+}
+#about {
+    float: left !important;
+}
+.yellowcoloertext {
+   color: #fed136 !important;
+}
+.blackcoloertext {
+    color: #333 !important;
+}
+.marginright {
+    margin-right:550px;
+}
+#about2 {
+    position: relative;
+    min-height: 1px;
     padding-right: 15px;
+    padding-left: 15px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #fed136;
+}
+.navbar-inverse .navbar-brand {
+    color: #fed136;
+}
+a {
+    color: #fed136;
+    text-decoration: none;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.center {
+    margin: auto;
+    width: 100%;
+    height:100%;
+
 }
+
+
+
+
+
+
+

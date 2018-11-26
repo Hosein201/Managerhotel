@@ -1,0 +1,52 @@
+﻿@model Managerhotel.Models.CoffeeShop
+
+@{
+    ViewBag.Title = "مشخصات رزرو ";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CoffeeShop</h4>
+    <hr />
+    <dl class="dl-horizontal visible-print">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationNumberCo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservationNumberCo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attendance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attendance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   مسافر گرامی در هنگام مراجعه پرینت این صفحه را ارایه فرمایید متشکرم!
+</p>
+<p>
+       @Html.ActionLink("Back to List", "Index")
+</p>
