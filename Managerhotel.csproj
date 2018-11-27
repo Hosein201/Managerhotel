@@ -288,10 +288,14 @@
     </Content>
     <Content Include=".DS_Store" />
     <Content Include="images\about.jpg" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
     <Content Include="images\body.jpg" />
     <Content Include="images\body1.jpg" />
     <Content Include="images\dicoday.jpg" />
     <Content Include="images\diconigth.jpg" />
+    <Content Include="images\4.jpg" />
     <Content Include="images\int1.jpg" />
     <Content Include="images\int2.jpg" />
     <Content Include="images\int3.jpg" />
@@ -354,9 +358,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Bodybuildingclubs\Create.cshtml" />
-    <Content Include="Views\Bodybuildingclubs\Delete.cshtml" />
     <Content Include="Views\Bodybuildingclubs\Details.cshtml" />
-    <Content Include="Views\Bodybuildingclubs\Edit.cshtml" />
     <Content Include="Views\Bodybuildingclubs\Index.cshtml" />
     <Content Include="Views\CoffeeShops\sonati.cshtml" />
     <Content Include="Views\CoffeeShops\Details.cshtml" />
@@ -374,6 +376,8 @@
     <Content Include="Views\CoffeeShops\Create.cshtml" />
     <Content Include="Views\Massagesalons\ManSalon.cshtml" />
     <Content Include="Views\Massagesalons\WomanSalon.cshtml" />
+    <Content Include="Views\Bodybuildingclubs\bodyman.cshtml" />
+    <Content Include="Views\Bodybuildingclubs\bodywoman.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

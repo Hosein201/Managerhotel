@@ -45,6 +45,8 @@
     <div class="align-center center-block row">
         <img style="background-image:url(/images/slider-2.jpg)" width="1311" height="500" />
     </div>
+  
+
     <div class=" col-md-12  colorbody">
         @RenderBody()
     </div>
@@ -70,70 +72,73 @@
 
                 <div class="col-md-12">
                     <div class="col-md-3">
-
-                        <center>
-                            <h3 class="yellowcoloertext">رستوان سنتی</h3>
-                        </center>
-                        <img src="~/images/sonati.jpg" height="300" width="310">
-                        <p class="text-justify coloertext">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                        <a href="@Url.Action("Sonati", "CoffeeShops")">
+                            <img src="~/images/sonati.jpg" height="300" width="310">
+                            <center>
+                                <h3 class="yellowcoloertext">رستوان سنتی</h3>
+                            </center>
+                        </a>
                     </div>
 
                     <div class="col-md-3">
-
-                        <center>
-                            <h3 class="yellowcoloertext">رستوران مدرن</h3>
-                        </center>
-                        <img src="~/images/modern.jpg" height="300" width="310">
-                        <p class="text-justify coloertext">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                        <a href="@Url.Action("Modern", "CoffeeShops")">
+                            <img src="~/images/modern.jpg" height="300" width="310">
+                            <center>
+                                <h3 class="yellowcoloertext">رستوران مدرن</h3>
+                            </center>
+                        </a>
                     </div>
 
                     <div class="col-md-3">
-                        <center>
-                            <h3 class="yellowcoloertext">باشگاه بدن سازی اقایان</h3>
-                        </center>
-                        <img src="~/images/body.jpg" height="300" width="310">
-                        <p class="text-justify coloertext">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                        <a href="@Url.Action("bodyman", "Bodybuildingclubs")">
+                            <img src="~/images/body.jpg" height="300" width="310">
+                            <center>
+                                <h3 class="yellowcoloertext">باشگاه بدن سازی اقایان</h3>
+                            </center>
+                         </a>   
                     </div>
                     <div class="col-md-3">
-                        <center>
-                            <h3 class="yellowcoloertext">باشگاه بدن سازی بانوان</h3>
-                        </center>
-                        <img src="~/images/body1.jpg" height="300" width="310">
-                        <p class="text-justify coloertext">غذاهای متنوع و لذیذ بین المللی و ایرانی همراه با سرویس های مطلوب در مجموعه رستورانهای هتل ترنج</p>
+                        <a href="@Url.Action("bodywoman", "Bodybuildingclubs")">
+                            <img src="~/images/body1.jpg" height="300" width="310">
+                            <center>
+                                <h3 class="yellowcoloertext">باشگاه بدن سازی بانوان</h3>
+                            </center>
+                       </a>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="col-md-3">
-
-                        <center>
-                            <h3 class="yellowcoloertext">دیسکو Night</h3>
-                        </center>
-                        <img src="~/images/diconigth.jpg" height="300" width="310">
-                        <p class="text-justify coloertext">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                        <a href="@Url.Action("Disconight", "Discoes")">
+                            <center>
+                                <h3 class="yellowcoloertext">دیسکو Night</h3>
+                            </center>
+                            <img src="~/images/diconigth.jpg" height="300" width="310">
+                        </a>
                     </div>
                     <div class="col-md-3">
-
-                        <center>
-                            <h3 class="yellowcoloertext">دسکو Day</h3>
-                        </center>
-                        <img src="~/images/dicoday.jpg" height="300" width="310">
-                        <p class="text-justify coloertext ">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                        <a href="@Url.Action("Discoday", "Discoes")">
+                            <center>
+                                <h3 class="yellowcoloertext">دسکو Day</h3>
+                            </center>
+                            <img src="~/images/dicoday.jpg" height="300" width="310">
+                        </a>
                     </div>
                     <div class="col-md-3">
-
-                        <center>
-                            <h3 class="yellowcoloertext">سالن ماساژ آقایان</h3>
-                        </center>
-                        <img src="~/images/masman.jpg" height="300" width="310">
-                        <p class="text-justify coloertext ">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                        <a href="@Url.Action("ManSalon", "Massagesalons")">
+                            <center>
+                                <h3 class="yellowcoloertext">سالن ماساژ آقایان</h3>
+                            </center>
+                            <img src="~/images/masman.jpg" height="300" width="310">
+                        </a>
                     </div>
                     <div class="col-md-3">
+                        <a href="@Url.Action("WomanSalon", "MassagesalonsController")">
+                            <center>
+                                <h3 class="yellowcoloertext">سالن ماساژ بانوان</h3>
+                            </center>
+                            <img src="~/images/maswoman.jpg" height="300" width="310">
+                        </a>
 
-                        <center>
-                            <h3 class="yellowcoloertext">سالن ماساژ بانوان</h3>
-                        </center>
-                        <img src="~/images/maswoman.jpg" height="300" width="310">
-                        <p class="text-justify  coloertext">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
                     </div>
 
                 </div>

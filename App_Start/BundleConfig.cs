@@ -8,7 +8,8 @@ namespace Managerhotel
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                         "~/Scripts/jquery-2.2.4.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -20,6 +21,7 @@ namespace Managerhotel
                       "~/Scripts/bootstrap-rtl.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-rtl.css",
                       "~/Content/bootstrap-theme-rtl.css",
                       "~/Content/font-awesome.css",

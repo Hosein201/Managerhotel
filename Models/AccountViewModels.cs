@@ -74,7 +74,6 @@ namespace Managerhotel.Models
         [DataType(DataType.Password)]
         [Display(Name = "کلمه عبور")]
         public string Password { get; set; }
-
         [DataType(DataType.Password)]
         [Display(Name = "تایید کلمه عبور")]
         [Compare("کلمه عبور", ErrorMessage = "کلمه عبور و تایید آن یکسان نیست")]

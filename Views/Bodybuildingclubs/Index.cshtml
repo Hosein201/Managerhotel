@@ -1,45 +1,48 @@
 ﻿@model IEnumerable<Managerhotel.Models.Bodybuildingclub>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Attendance)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlanWoman)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlanMan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Attendance)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlanWoman)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlanMan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BodybuildingclubId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BodybuildingclubId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BodybuildingclubId })
-        </td>
-    </tr>
+@{
+    ViewBag.Title = "باشگاه بدن سازی آریا";
 }
 
-</table>
+
+<div class="row">
+
+    <center>
+        <h2 class="yellowcoloertext">@ViewBag.Title</h2>
+    </center>
+    <h1 class="heading"></h1>
+    <div class="row col-md-12">
+        <ul>
+            <li class="col-md-6">
+
+                <div>
+
+                    <a href="@Url.Action("bodyman", "Bodybuildingclubs")">
+                        <center>
+                            <h3 class="yellowcoloertext">باشگاه بدن سازی آریا(اقایان)</h3>
+                        </center>
+                        <img src="~/images/body.jpg" width="580" height="300">
+                    </a>
+                </div>
+                <p class="text-justify coloertext">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+            </li>
+            <li class="col-md-6">
+
+                <div>
+
+                    <a href="@Url.Action("bodywoman", "Bodybuildingclubs")">
+                        <center> 
+                            <h3 class="yellowcoloertext">باشگاه بدن سازی آریا(بانوان)</h3>  
+                        </center>
+                        <img src="~/images/body1.jpg" width="580" height="300">
+                    </a>
+                </div>
+                <p class="text-justify coloertext">رستوران سنتی در طبقه‌ی همکف واقع شده است.</p>
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+

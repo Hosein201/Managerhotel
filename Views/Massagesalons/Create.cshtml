@@ -6,15 +6,15 @@
 
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal col-md-6">
-                <center>
-                    <h4 class="yellowcoloertext">@ViewBag.Title</h4>
-                </center>
-       
+        <center>
+            <h4 class="yellowcoloertext">@ViewBag.Title</h4>
+        </center>
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Attendancedate, htmlAttributes: new { @class = "control-label col-md-2 yellowcoloertext" })
@@ -51,7 +51,13 @@
                 </button>
             </div>
         </div>
-        
+
+    </div>
+    <div class="col-md-6 yellowcoloertext">
+        <p class="coloertext text-justify " style="margin-top:30px">
+            مجموعه گردشگری و هتل 5 ستاره دریایی نفس:واقع درشمال غربی جزیره کیش(در خلیج فارس) در منطقه بکر با اکوسیستم طبیعی واقع گردیده است. این مجموعه در دو فاز تعریف شده است: فاز اول هتل برروی آب و فاز دوم هتل طبقاتی ساحلی(در حال احداث) و همچنین رستوران، کافی شاپ وفست فود ساحلی، رستوران های بزرگ و کوچک و همچنین کافی شاپ بر روی دریا با دید بسیار عالی از غروب و آبهای آزاد خلیج فارس، سالن اسپا ماساژ با اتاق هایی دارای کف شیشه ای، سالن جیم(ورزش)برروی آب، خانه بازی کودک، سالن بیلیارد و بازی و ... می باشد
+        </p>
+
     </div>
 }
 

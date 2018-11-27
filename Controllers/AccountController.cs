@@ -154,7 +154,9 @@ namespace Managerhotel.Controllers
                     UserName = model.Email,
                     Email = model.Email,
                     Name = model.Name,
-                    Family = model.Family
+                    Family = model.Family,
+                    PasswordHash=model.Password//hhhhh
+                    
                 };
                 var userCreator = UserManager.CreateAsync(user, model.Password);
               

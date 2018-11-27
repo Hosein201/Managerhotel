@@ -54,61 +54,69 @@ namespace Managerhotel.Controllers
 
             return View(bodybuildingclub);
         }
-
-        // GET: Bodybuildingclubs/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult bodyman()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Bodybuildingclub bodybuildingclub = db.Bodybuildingclub.Find(id);
-            if (bodybuildingclub == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bodybuildingclub);
+            return View();
+        }
+        public ActionResult bodywoman()
+        {
+            return View();
         }
 
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Bodybuildingclub bodybuildingclub)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(bodybuildingclub).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(bodybuildingclub);
-        }
+        //// GET: Bodybuildingclubs/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Bodybuildingclub bodybuildingclub = db.Bodybuildingclub.Find(id);
+        //    if (bodybuildingclub == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(bodybuildingclub);
+        //}
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(Bodybuildingclub bodybuildingclub)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(bodybuildingclub).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(bodybuildingclub);
+        //}
 
         // GET: Bodybuildingclubs/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Bodybuildingclub bodybuildingclub = db.Bodybuildingclub.Find(id);
-            if (bodybuildingclub == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bodybuildingclub);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Bodybuildingclub bodybuildingclub = db.Bodybuildingclub.Find(id);
+        //    if (bodybuildingclub == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(bodybuildingclub);
+        //}
 
         // POST: Bodybuildingclubs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Bodybuildingclub bodybuildingclub = db.Bodybuildingclub.Find(id);
-            db.Bodybuildingclub.Remove(bodybuildingclub);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    Bodybuildingclub bodybuildingclub = db.Bodybuildingclub.Find(id);
+        //    db.Bodybuildingclub.Remove(bodybuildingclub);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {
