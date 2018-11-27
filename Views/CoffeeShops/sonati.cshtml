@@ -1,28 +1,40 @@
 ﻿
 @{
-    ViewBag.Title = "Sonati";
+  ViewBag.Title = "رستوان سنتی";
 }
 
-<h2>Sonati</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div>
+    <div class="col-md-12">
+
+        <center>
+            <h2 class="yellowcoloertext">@ViewBag.Title</h2>
+        </center>
+        <div class="col-md-6">
+            <img alt="" src="~/images/sonati.jpg" width="580" height="300">
+
+        </div>
+
+        <p class="col-md-6 text-justify coloertext">کافی‌شاپ مدرن با ارائه‌‌ی طیف گسترده‌ای از انواع نوشیدنی‌های سرد و گرم، اسنک‌‌های لذیذ، سالاد و ساندویچ روز، آمادگی پذیرایی از بیش از 70 مهمان را دارد. مهمانان عزیز می‌توانند از تراس جنب کافی‌شاپ برای استعمال دخانیات و یا از ساعت 11 شب تا 3 صبح برای سفارش قلیان استفاده کنند.</p>
 
 
-        <img alt="" src="~/images/sonati.jpg" style="height:50%; width:50%">
-        <p>کافی‌شاپ مدرن با ارائه‌‌ی طیف گسترده‌ای از انواع نوشیدنی‌های سرد و گرم، اسنک‌‌های لذیذ، سالاد و ساندویچ روز، آمادگی پذیرایی از بیش از 70 مهمان را دارد. مهمانان عزیز می‌توانند از تراس جنب کافی‌شاپ برای استعمال دخانیات و یا از ساعت 11 شب تا 3 صبح برای سفارش قلیان استفاده کنند.</p>
-
-
+        <div>
+            <button class="btn btn-default" id="btnn">
+                @Html.ActionLink("رزرو کنید", "Create", "CoffeeShops", new { @type = "submit" })
+            </button>
+            <button class="btn btn-default" id="btnn">
+                @Html.ActionLink("بازگشت به صفحه اصلی", "Index", "CoffeeShops", new { @type = "submit" })
+            </button>
+        </div>
     </div>
+
 }
 
-<div>
-    @Html.ActionLink("رزرو کنید !", "Create") |
-    @Html.ActionLink("بازگشت به صفحه اصلی", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

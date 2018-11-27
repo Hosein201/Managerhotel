@@ -1,46 +1,46 @@
 ﻿@model IEnumerable<Managerhotel.Models.Disco>
 
 @{
-    ViewBag.Title = "دیسکو";
+    ViewBag.Title = "دیسکو ملل";
 }
 
-<h2>@ViewBag.Title</h2>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="block">
-                <h1 class="heading"><span>@ViewBag.Title</span></h1>
-                <div class="row col-md-12">
-                    <ul>
-                        <li class="col-md-6">
-                            <div data-toggle="modal" data-target="#mymodal9" class="content-left" style="float:right!important;">
+<div class="row">
 
-                                <h3 class="col-md-6">رستوران مدرن</h3>
-                            </div>
-                            <div>
-                                <a href="@Url.Action("Disconight", "Discoes")">
-                                    <img src="~/images/modern.jpg" alt="رستوران مدرن" title="رستوران مدرن">
-                                </a>
-                            </div>
-                            <p style="text-align:justify">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
-                        </li>
-                        <li class="col-md-6">
-                            <div data-target="#mymodal10" class="content-left" data-toggle="modal">
-                                <h3 class="col-md-6">رستوران سنتی</h3>
-                            </div>
-                            <div class="blog-img">
-                                <a href="@Url.Action("Discoday", "Discoes")">
-                                    <img src="~/images/sonati.jpg" alt="رستوران سنتی" title="رستوران سنتی">
-                                </a>
-                            </div>
-                            <p>رستوران سنتی در طبقه‌ی همکف واقع شده است.</p>
+    <center>
+        <h2 class="yellowcoloertext">@ViewBag.Title</h2>
+    </center>
+    <h1 class="heading"></h1>
+    <div class="row col-md-12">
+        <ul>
+            <li class="col-md-6">
 
-                        </li>
-                    </ul>
+                <div>
+
+                    <a href="@Url.Action("Disconight", "Discoes")">
+                        <center>
+                            <h3 class="yellowcoloertext">دیسکو ملل شب</h3>
+                        </center>
+                        <img src="~/images/diconigth.jpg" width="580" height="300">
+                    </a>
                 </div>
+                <p class="text-justify coloertext">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+            </li>
+            <li class="col-md-6">
 
-            </div>
-        </div><!-- .col-md-12 close -->
-    </div><!-- .row close -->
-</div><!-- .containe close -->
+                <div>
+
+                    <a href="@Url.Action("Discoday", "Discoes")">
+                        <center> <h3 class="yellowcoloertext">دیسکو ملل روز</h3>  </center>
+                        <img src="~/images/dicoday.jpg" width="580" height="300">
+                    </a>
+                </div>
+                <p class="text-justify coloertext">رستوران سنتی در طبقه‌ی همکف واقع شده است.</p>
+
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+

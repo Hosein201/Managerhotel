@@ -1,30 +1,24 @@
-﻿@model Managerhotel.Models.Disco
+﻿@model Managerhotel.ViewModels.DiscoCreateViewModel
 
 @{
-    ViewBag.Title = "دیسکو";
+    ViewBag.Title = "رزرو کنید !";
 }
 
-<h2>@ViewBag.Title</h2>
+
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        
-        <hr />
+    <div class="form-horizontal col-md-6">
+         <center>
+           <h4 class="yellowcoloertext">@ViewBag.Title</h4>
+         </center>
+       
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.ReservationnumberDc, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ReservationnumberDc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ReservationnumberDc, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Drinking, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Drinking, htmlAttributes: new { @class = "control-label col-md-2 yellowcoloertext" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Drinking, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Drinking, "", new { @class = "text-danger" })
@@ -32,23 +26,23 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Attendance, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Attendancedate, htmlAttributes: new { @class = "control-label col-md-2 yellowcoloertext" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Attendance, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Attendance, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Attendancedate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Attendancedate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Plan, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Attendancetime, htmlAttributes: new { @class = "control-label col-md-2 yellowcoloertext" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Plan, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Plan, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Attendancetime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Attendancetime, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2 yellowcoloertext" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
@@ -57,15 +51,19 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="تایید" class="btn btn-default" />
+                <button class="btn btn-default" id="btnn">
+                    @Html.ActionLink("بازگشت", "Index", "Discoes", new { @type = "submit" })
+                </button>
+                <button class="btn btn-default" id="btnn">
+                    @Html.ActionLink("مشخصات رزرو", "Details", "Discoes", new { @type = "submit" })
+                </button>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

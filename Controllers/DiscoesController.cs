@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Managerhotel.Models;
+using Managerhotel.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace Managerhotel.Controllers
 {
@@ -41,21 +43,27 @@ namespace Managerhotel.Controllers
             return View();
         }
 
-        // POST: Discoes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Disco disco)
+        public ActionResult Create(DiscoCreateViewModel ViewModel)
         {
             if (ModelState.IsValid)
             {
+                Disco disco = new Disco();
+                var time= DateTime.Now.Hour;
+                var Reservation = User.Identity.GetUserId()+time;
+                disco.Drinking = ViewModel.Drinking;
+                disco.ReservationnumberDc = Reservation;
+                disco.Attendancedate = ViewModel.Attendancedate;
+                disco.Attendancedate = ViewModel.Attendancetime;
+                disco.Description = ViewModel.Description;
                 db.Disco.Add(disco);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(disco);
+            return View(ViewModel);
         }
 
         public ActionResult Disconight()

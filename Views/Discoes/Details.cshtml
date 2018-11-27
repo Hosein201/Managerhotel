@@ -1,15 +1,16 @@
 ﻿@model Managerhotel.Models.Disco
 
 @{
-    ViewBag.Title = "دیسکو";
+    ViewBag.Title = "مشخصات رزرو شما";
 }
 
-<h2>@ViewBag.Title</h2>
+
 
 <div>
-  
-    <hr />
-    <dl class="dl-horizontal">
+    <center>
+        <h4 class="yellowcoloertext">@ViewBag.Title</h4>
+    </center>
+    <dl class="form-horizontal col-md-6">
         <dt>
             @Html.DisplayNameFor(model => model.ReservationnumberDc)
         </dt>
@@ -27,19 +28,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Attendance)
+            @Html.DisplayNameFor(model => model.Attendancedate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Attendance)
+            @Html.DisplayFor(model => model.Attendancedate)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Plan)
+            @Html.DisplayNameFor(model => model.Attendancetime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Plan)
+            @Html.DisplayFor(model => model.Attendancetime)
         </dd>
 
         <dt>
@@ -51,8 +52,13 @@
         </dd>
 
     </dl>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-default" id="btnn">
+                @Html.ActionLink("بازگشت", "Index", "Discoes", new { @type = "submit" })
+            </button>
+
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DiscoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

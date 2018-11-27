@@ -13,6 +13,8 @@ namespace Managerhotel.Models
        // [Key]//PK
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Identity
         public int MassagesalonId { get; set; }
+        [Required, Display(Name = "شماره رزرو")]
+        public string ReservationNumberCo { get; set; }
         [Display(Name = "تاریخ حضور")]
         public DateTime Attendancedate { get; set; }//زمان حضور
         [Display(Name = "زمان حضور")]

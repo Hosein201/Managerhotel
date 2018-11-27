@@ -1,15 +1,17 @@
 ﻿@model Managerhotel.Models.CoffeeShop
 
 @{
-    ViewBag.Title = "مشخصات رزرو ";
+    ViewBag.Title = "مشخصات رزرو شما";
 }
 
-<h2>Details</h2>
+
 
 <div>
-    <h4>CoffeeShop</h4>
-    <hr />
-    <dl class="dl-horizontal visible-print">
+    <center>
+        <h4 class="yellowcoloertext">@ViewBag.Title</h4>
+    </center>
+
+    <dl class="form-horizontal col-md-6">
         <dt>
             @Html.DisplayNameFor(model => model.ReservationNumberCo)
         </dt>
@@ -27,11 +29,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Attendance)
+            @Html.DisplayNameFor(model => model.Attendancedate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Attendance)
+            @Html.DisplayFor(model => model.Attendancedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attendancetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attendancetime)
         </dd>
 
         <dt>
@@ -43,10 +53,12 @@
         </dd>
 
     </dl>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-default" id="btnn">
+                @Html.ActionLink("بازگشت", "Index", "CoffeeShops", new { @type = "submit" })
+            </button>
+
+        </div>
+    </div>
 </div>
-<p>
-   مسافر گرامی در هنگام مراجعه پرینت این صفحه را ارایه فرمایید متشکرم!
-</p>
-<p>
-       @Html.ActionLink("Back to List", "Index")
-</p>

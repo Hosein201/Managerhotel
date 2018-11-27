@@ -4,42 +4,43 @@
     ViewBag.Title = "کافی شاپ";
 }
 
-<h2>@ViewBag.Title</h2>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="block">
-                <h1 class="heading"><span>@ViewBag.Title</span></h1>
-                <div class="row col-md-12">
-                    <ul>
-                        <li class="col-md-6">
-                            <div data-toggle="modal" data-target="#mymodal9" class="content-left" style="float:right!important;">
 
-                                <h3 class="col-md-6">رستوران مدرن</h3>
-                            </div>
-                            <div>
-                                <a href="@Url.Action("Modern", "CoffeeShops")">
-                                    <img src="~/images/modern.jpg" alt="رستوران مدرن" title="رستوران مدرن">
-                                </a>
-                            </div>
-                            <p style="text-align:justify">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
-                        </li>
-                        <li class="col-md-6">
-                            <div data-target="#mymodal10" class="content-left" data-toggle="modal">
-                                <h3 class="col-md-6">رستوران سنتی</h3>
-                            </div>
-                            <div class="blog-img">
-                                <a href="@Url.Action("Sonati", "CoffeeShops")">
-                                    <img src="~/images/sonati.jpg" alt="رستوران سنتی" title="رستوران سنتی">
-                                </a>
-                            </div>
-                            <p>رستوران سنتی در طبقه‌ی همکف واقع شده است.</p>
+<div class="row" >
 
-                        </li>
-                    </ul>
+    <center>
+        <h2 class="yellowcoloertext">@ViewBag.Title</h2>
+    </center>
+    <h1 class="heading"></h1>
+    <div class="row col-md-12">
+        <ul>
+            <li class="col-md-6">
+               
+                <div>
+                   
+                    <a href="@Url.Action("Modern", "CoffeeShops")">
+                        <center> 
+                        <h3 class="yellowcoloertext">رستوران مدرن</h3> 
+                        </center>
+                        <img src="~/images/modern.jpg" width="580" height="300">
+                    </a>
                 </div>
+                <p class="text-justify coloertext">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+            </li>
+            <li class="col-md-6">
+                
+                <div>
+                    
+                    <a href="@Url.Action("Sonati", "CoffeeShops")">
+                        <center> <h3 class="yellowcoloertext">رستوران سنتی</h3>  </center>
+                        <img src="~/images/sonati.jpg" width="580" height="300" >
+                    </a>
+                </div>
+                <p class="text-justify coloertext">رستوران سنتی در طبقه‌ی همکف واقع شده است.</p>
 
-            </div>
-        </div><!-- .col-md-12 close -->
-    </div><!-- .row close -->
-</div><!-- .containe close -->
+            </li>
+        </ul>
+    </div>
+
+</div>
+       
+

@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title -هتل تفریحی نفس</title>
+    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body class="container-fluid colorbody">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -22,8 +23,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="yellowcoloertext">@Html.ActionLink("خانه", "Index", "Home")</li>
-                    <li class="yellowcoloertext">@Html.ActionLink("درباره ما", "About", "Home")</li>
-                    <li class="yellowcoloertext">@Html.ActionLink("اعضا", "Contact", "Home")</li>
                     <li class="nav-item dropdown ml-auto ">
                         <a class="nav-link dropdown-toggle yellowcoloertext" data-toggle="dropdown">امکانات</a>
                         <div class="dropdown-menu" \>
@@ -35,16 +34,18 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="yellowcoloertext">@Html.ActionLink("اعضا", "Contact", "Home")</li>
+
 
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container-fluid align-center center-block row">
+    <div class="align-center center-block row">
         <img style="background-image:url(/images/slider-2.jpg)" width="1311" height="500" />
     </div>
-    <div class=" col-md-12 ">
+    <div class=" col-md-12  colorbody">
         @RenderBody()
     </div>
     <div class="  col-md-12">
@@ -52,13 +53,13 @@
 
     </div>
 
-    <div class="row" style="background-color:#f8f8f8">
+    <div class="row">
         <div class="col-md-12">
             <div class="block">
                 <center>
                     <h2 class="heading ">
 
-                        <span>
+                        <span class="yellowcoloertext">
 
                             امکانات  هتل نفس
                         </span>
@@ -68,58 +69,92 @@
 
 
                 <div class="col-md-12">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
 
                         <center>
-                            <h3>رستوان سنتی</h3>
+                            <h3 class="yellowcoloertext">رستوان سنتی</h3>
                         </center>
-                        <img src="~/images/sonati.jpg" height="350" width="397">
-                        <p class="text-justify">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                        <img src="~/images/sonati.jpg" height="300" width="310">
+                        <p class="text-justify coloertext">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
 
                         <center>
-                            <h3>رستوران مدرن</h3>
+                            <h3 class="yellowcoloertext">رستوران مدرن</h3>
                         </center>
-                        <img src="~/images/modern.jpg" height="350" width="397">
-                        <p class="text-justify">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                        <img src="~/images/modern.jpg" height="300" width="310">
+                        <p class="text-justify coloertext">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <center>
-                            <h3>باشگاه بدن سازی اقایان</h3>
+                            <h3 class="yellowcoloertext">باشگاه بدن سازی اقایان</h3>
                         </center>
-                        <img src="~/images/body.jpg" height="350" width="397">
-                        <p class="text-justify">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                        <img src="~/images/body.jpg" height="300" width="310">
+                        <p class="text-justify coloertext">هتل ترنج با دارا بودن مدرنترین امکانات و تجهیزات ممکن، آماده برگزاری جشن ها، سمینار ها و همایش های بین المللی شما در سالن های با شکوه و مجلل خود می باشد.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <center>
+                            <h3 class="yellowcoloertext">باشگاه بدن سازی بانوان</h3>
+                        </center>
+                        <img src="~/images/body1.jpg" height="300" width="310">
+                        <p class="text-justify coloertext">غذاهای متنوع و لذیذ بین المللی و ایرانی همراه با سرویس های مطلوب در مجموعه رستورانهای هتل ترنج</p>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="col-md-4">
-                        <center>
-                            <h3>باشگاه بدن سازی بانوان</h3>
-                        </center>
-                        <img src="~/images/body1.jpg" height="350" width="397">
-                        <p class="text-justify">غذاهای متنوع و لذیذ بین المللی و ایرانی همراه با سرویس های مطلوب در مجموعه رستورانهای هتل ترنج</p>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
 
                         <center>
-                            <h3>دیسکو Night</h3>
+                            <h3 class="yellowcoloertext">دیسکو Night</h3>
                         </center>
-                        <img src="~/images/diconigth.jpg" height="350" width="397">
-                        <p class="text-justify">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                        <img src="~/images/diconigth.jpg" height="300" width="310">
+                        <p class="text-justify coloertext">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
 
                         <center>
-                            <h3>دسکو Day</h3>
+                            <h3 class="yellowcoloertext">دسکو Day</h3>
                         </center>
-                        <img src="~/images/dicoday.jpg" height="350" width="397">
-                        <p class="text-justify ">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                        <img src="~/images/dicoday.jpg" height="300" width="310">
+                        <p class="text-justify coloertext ">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                    </div>
+                    <div class="col-md-3">
+
+                        <center>
+                            <h3 class="yellowcoloertext">سالن ماساژ آقایان</h3>
+                        </center>
+                        <img src="~/images/masman.jpg" height="300" width="310">
+                        <p class="text-justify coloertext ">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
+                    </div>
+                    <div class="col-md-3">
+
+                        <center>
+                            <h3 class="yellowcoloertext">سالن ماساژ بانوان</h3>
+                        </center>
+                        <img src="~/images/maswoman.jpg" height="300" width="310">
+                        <p class="text-justify  coloertext">رستورانی با شکوه و مجلل همراه با بوفه، چشم انداز عالی , تمرکز و دقت در ارائه سرویس های مطلوب به مهمانان گرامی</p>
                     </div>
 
                 </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <center>
+                    <h2 class="yellowcoloertext">گالری تصاویر</h2>
+                </center>
+            </div>
+            <div>
+                <img src="~/images/int1.jpg" height="240" width="261">
+                <img src="~/images/int2.jpg" height="240" width="261">
+                <img src="~/images/int3.jpg" height="240" width="261">
+                <img src="~/images/about.jpg" height="240" width="261">
+                <img src="~/images/int5.jpg" height="240" width="231">
 
 
             </div>
@@ -136,10 +171,6 @@
 
 
                         <h4><i class="fa fa-map-marker"></i>     ایران-خلیج فارس-جزیره کیش-مجموعه گردشگری و هتل دریایی نفس</h4>
-
-
-
-
                         <h4>
                             <i class="fa fa-phone"></i> 07644474114-8
                         </h4>
@@ -147,24 +178,15 @@
                             <i class="fa fa-phone"></i>
                             09226323605
                         </h4>
-
-
-
                         <h4><i class="fa fa-envelope"></i>hoseingolmohammadi193@yahoo.com</h4>
-
-
-
                     </div>
                 </div>
             </div>
             <!-- .col-md-6 close -->
-            <div class="col-md-6 yellowcoloertext ">
-                <div class="block wow fadeInLeft animated" data-wow-delay="700ms" style="visibility: visible; animation-delay: 700ms; animation-name: fadeInLeft;">
+            <div class="row col-md-6 yellowcoloertext " id="#footercol-md-12">
+                <div>
                     <h3>معرفي ما</h3><hr>
-                    <p style="height: inherit;"></p><p style="text-align:justify"><span class="yellowcoloertext" font-family:koodakbold,yekan; font-size:16px">براي آشنايي بيشتر با تنها هتل حامی محیط زیست کشور هر يک از بخشهاي اين مجموعه اقامتي و پذيرايي را بطور اجمال معرفي ميکنيم </span></p>
-
-                    <p></p>
-
+                    <p>براي آشنايي بيشتر با تنها هتل حامی محیط زیست کشور هر يک از بخشهاي اين مجموعه اقامتي و پذيرايي را بطور اجمال معرفي ميکنيم</p>
                 </div><hr>
                 <div>
                     <div class="col-md-12">
