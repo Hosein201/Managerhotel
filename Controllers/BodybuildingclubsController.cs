@@ -10,6 +10,7 @@ using Managerhotel.Models;
 
 namespace Managerhotel.Controllers
 {
+    
     public class BodybuildingclubsController : Controller
     {
         private ManagerhotelDbContext db = new ManagerhotelDbContext();
@@ -19,7 +20,7 @@ namespace Managerhotel.Controllers
         {
             return View(db.Bodybuildingclub.ToList());
         }
-
+        [Authorize]
         // GET: Bodybuildingclubs/Details/5
         public ActionResult Details(int? id)
         {
@@ -34,7 +35,7 @@ namespace Managerhotel.Controllers
             }
             return View(bodybuildingclub);
         }
-
+        [Authorize]
         public ActionResult Create()
         {
             return View();

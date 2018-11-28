@@ -11,22 +11,25 @@ using Managerhotel.ViewModels;
 using Microsoft.AspNet.Identity;
 
 namespace Managerhotel.Controllers
-{
+{ 
     public class CoffeeShopsController : Controller
     {
         private ManagerhotelDbContext db = new ManagerhotelDbContext();
 
+        
         // GET: CoffeeShops
         public ActionResult Index()
         {
             return View(db.CoffeeShop.ToList());
         }
-
+        
+        [Authorize]
         // GET: CoffeeShops/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
+                Console.WriteLine("äsdhaisdaishdhasdhas");
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             CoffeeShop coffeeShop = db.CoffeeShop.Find(id);
@@ -36,7 +39,7 @@ namespace Managerhotel.Controllers
             }
             return View(coffeeShop);
         }
-
+        [Authorize]
         // GET: CoffeeShops/Create
         public ActionResult Create()
         {
@@ -52,7 +55,6 @@ namespace Managerhotel.Controllers
             {  CoffeeShop CoffeeShopp = new CoffeeShop();
                 var time = DateTime.Now.Hour;
                 var Reservation = User.Identity.GetUserId()+time;
-                
                 CoffeeShopp.Eating = ViewModel.Eating;
                 CoffeeShopp.Attendancetime = ViewModel.Attendancetime;
                 CoffeeShopp.Attendancedate = ViewModel.Attendancedate;

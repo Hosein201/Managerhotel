@@ -49,16 +49,16 @@ namespace Managerhotel.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "ایمیل")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "کلمه عبور")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "مرا به خاطر بسپار!")]
         public bool RememberMe { get; set; }
     }
 
@@ -71,12 +71,12 @@ namespace Managerhotel.Models
 
         [Required]
         [StringLength(100, ErrorMessage = "کلمه عبور شما باید حداقل ۶ و حداکثر ۱۰۰ کاراکتر باشد", MinimumLength = 6)]
-        [DataType(DataType.Password)]
         [Display(Name = "کلمه عبور")]
-        public string Password { get; set; }
         [DataType(DataType.Password)]
+        public string Password { get; set; }
         [Display(Name = "تایید کلمه عبور")]
-        [Compare("کلمه عبور", ErrorMessage = "کلمه عبور و تایید آن یکسان نیست")]
+        [Compare("Password", ErrorMessage = "کلمه عبور و تایید آن یکسان نیست")]
+        [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
         [Display(Name = "نام")]
         public string Name { get; set; }

@@ -56,9 +56,9 @@ img {
     margin-right: auto;
     margin-left: auto;
 }
-#about {
+/*#about {
     float: left !important;
-}
+}*/
 .yellowcoloertext {
    color: #fed136 !important;
 }

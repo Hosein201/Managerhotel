@@ -15,6 +15,7 @@ namespace Managerhotel.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -154,17 +155,16 @@ namespace Managerhotel.Controllers
                     UserName = model.Email,
                     Email = model.Email,
                     Name = model.Name,
-                    Family = model.Family,
-                    PasswordHash=model.Password//hhhhh
-                    
+                    Family = model.Family
                 };
-                var userCreator = UserManager.CreateAsync(user, model.Password);
-              
-                var result = await userCreator;
-                UserManager.AddToRole(user.Id, "User");
+                var result = await UserManager.CreateAsync(user, model.Password);
+                //var userCreator = UserManager.CreateAsync(user, model.Password);
+
+                //var result = await userCreator;
+                //UserManager.AddToRole(user.Id, "User");
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    await SignInManager.SignInAsync(user, false,false);
                     
                   
                     return RedirectToAction("Index", "Home");
@@ -179,9 +179,9 @@ namespace Managerhotel.Controllers
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmail(string userId, string code)
+        public async Task<ActionResult> ConfirmEmail(int userId, string code)
         {
-            if (userId == null || code == null)
+            if (userId == default(int) || code == null)
             {
                 return View("Error");
             }
@@ -292,7 +292,7 @@ namespace Managerhotel.Controllers
         public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
         {
             var userId = await SignInManager.GetVerifiedUserIdAsync();
-            if (userId == null)
+            if (userId == default(int))
             {
                 return View("Error");
             }

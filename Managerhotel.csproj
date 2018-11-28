@@ -219,37 +219,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811261424056_inti.cs" />
-    <Compile Include="Migrations\201811261424056_inti.Designer.cs">
-      <DependentUpon>201811261424056_inti.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811261428400_nmn.cs" />
-    <Compile Include="Migrations\201811261428400_nmn.Designer.cs">
-      <DependentUpon>201811261428400_nmn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811261432008_nm.cs" />
-    <Compile Include="Migrations\201811261432008_nm.Designer.cs">
-      <DependentUpon>201811261432008_nm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811261433363_tn.cs" />
-    <Compile Include="Migrations\201811261433363_tn.Designer.cs">
-      <DependentUpon>201811261433363_tn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811261503386_tnt.cs" />
-    <Compile Include="Migrations\201811261503386_tnt.Designer.cs">
-      <DependentUpon>201811261503386_tnt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811261512231_tntt.cs" />
-    <Compile Include="Migrations\201811261512231_tntt.Designer.cs">
-      <DependentUpon>201811261512231_tntt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811271154299_re.cs" />
-    <Compile Include="Migrations\201811271154299_re.Designer.cs">
-      <DependentUpon>201811271154299_re.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811271536338_ree.cs" />
-    <Compile Include="Migrations\201811271536338_ree.Designer.cs">
-      <DependentUpon>201811271536338_ree.cs</DependentUpon>
+    <Compile Include="Migrations\201811281657580_inti.cs" />
+    <Compile Include="Migrations\201811281657580_inti.Designer.cs">
+      <DependentUpon>201811281657580_inti.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -423,29 +395,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811261424056_inti.resx">
-      <DependentUpon>201811261424056_inti.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811261428400_nmn.resx">
-      <DependentUpon>201811261428400_nmn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811261432008_nm.resx">
-      <DependentUpon>201811261432008_nm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811261433363_tn.resx">
-      <DependentUpon>201811261433363_tn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811261503386_tnt.resx">
-      <DependentUpon>201811261503386_tnt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811261512231_tntt.resx">
-      <DependentUpon>201811261512231_tntt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811271154299_re.resx">
-      <DependentUpon>201811271154299_re.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811271536338_ree.resx">
-      <DependentUpon>201811271536338_ree.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811281657580_inti.resx">
+      <DependentUpon>201811281657580_inti.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

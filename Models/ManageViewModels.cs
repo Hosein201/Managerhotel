@@ -5,6 +5,7 @@ using Microsoft.Owin.Security;
 
 namespace Managerhotel.Models
 {
+
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }

@@ -10,7 +10,7 @@ namespace Managerhotel.Models
     [Table("Bodybuildingclub", Schema = "Facilities")]
     public class Bodybuildingclub
     {
-       // [Key]//PK
+        [Key]//PK
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Identity
         public int BodybuildingclubId { get; set; }
         [DataType(DataType.Date)]
@@ -23,7 +23,11 @@ namespace Managerhotel.Models
         public DateTime Attendancetime { get; set; }//زمان حضور
         [MaxLength(400),Display(Name ="توضیحات")]
         public string Description { get; set; }
-        public virtual List<ApplicationUser> User { get; set; }
+       public virtual List<ApplicationUser> User { get; set; }
+        public virtual int ApplicationUserUserId { get; set; }//foreng
+
+
+
 
     }
 }

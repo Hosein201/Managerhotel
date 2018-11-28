@@ -21,7 +21,7 @@ namespace Managerhotel.Controllers
         {
             return View(db.Massagesalon.ToList());
         }
-
+        [Authorize]
         // GET: Massagesalons/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,7 +36,7 @@ namespace Managerhotel.Controllers
             }
             return View(massagesalon);
         }
-
+        [Authorize]
         // GET: Massagesalons/Create
         public ActionResult Create()
         {

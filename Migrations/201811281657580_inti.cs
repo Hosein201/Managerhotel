@@ -15,6 +15,7 @@ namespace Managerhotel.Migrations
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
+                        ApplicationUserUserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.BodybuildingclubId);
             
@@ -22,7 +23,7 @@ namespace Managerhotel.Migrations
                 "dbo.AspNetUsers",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(maxLength: 50),
                         Family = c.String(maxLength: 50),
                         BirthDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
@@ -60,7 +61,7 @@ namespace Managerhotel.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.Int(nullable: false),
                         ClaimType = c.String(),
                         ClaimValue = c.String(),
                     })
@@ -78,6 +79,7 @@ namespace Managerhotel.Migrations
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
+                        ApplicationUserUserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.CoffeeShopId);
             
@@ -86,11 +88,12 @@ namespace Managerhotel.Migrations
                 c => new
                     {
                         DiscoId = c.Int(nullable: false, identity: true),
-                        ReservationnumberDc = c.Int(nullable: false),
+                        ReservationnumberDc = c.String(nullable: false),
                         Drinking = c.String(maxLength: 100),
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
+                        ApplicationUserUserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.DiscoId);
             
@@ -100,7 +103,7 @@ namespace Managerhotel.Migrations
                     {
                         LoginProvider = c.String(nullable: false, maxLength: 128),
                         ProviderKey = c.String(nullable: false, maxLength: 128),
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -111,9 +114,11 @@ namespace Managerhotel.Migrations
                 c => new
                     {
                         MassagesalonId = c.Int(nullable: false, identity: true),
+                        ReservationNumberCo = c.String(nullable: false),
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
+                        ApplicationUserUserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.MassagesalonId);
             
@@ -121,8 +126,8 @@ namespace Managerhotel.Migrations
                 "dbo.AspNetUserRoles",
                 c => new
                     {
-                        UserId = c.String(nullable: false, maxLength: 128),
-                        RoleId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.Int(nullable: false),
+                        RoleId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -134,7 +139,7 @@ namespace Managerhotel.Migrations
                 "dbo.AspNetRoles",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 256),
                     })
                 .PrimaryKey(t => t.Id)

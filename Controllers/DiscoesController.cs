@@ -21,7 +21,7 @@ namespace Managerhotel.Controllers
         {
             return View(db.Disco.ToList());
         }
-
+        [Authorize]
         // GET: Discoes/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,7 +36,7 @@ namespace Managerhotel.Controllers
             }
             return View(disco);
         }
-
+        [Authorize]
         // GET: Discoes/Create
         public ActionResult Create()
         {

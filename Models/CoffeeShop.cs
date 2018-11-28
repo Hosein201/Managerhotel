@@ -10,7 +10,7 @@ namespace Managerhotel.Models
     [Table("CoffeeShop", Schema = "Facilities")]
     public class CoffeeShop
     {
-      //  [Key]//PK
+       [Key]//PK
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Identity
         public int CoffeeShopId { get; set; }
         [Required ,Display(Name ="شماره رزرو")]
@@ -27,6 +27,9 @@ namespace Managerhotel.Models
         public string Description { get; set; }
 
         public virtual List<ApplicationUser> User { get; set; }
+        public virtual int ApplicationUserUserId { get; set; }//foreng
+
+
 
 
 

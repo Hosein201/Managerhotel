@@ -10,7 +10,7 @@ namespace Managerhotel.Models
     [Table("Disco", Schema = "Facilities")]
     public class Disco
     {
-       //[Key]//PK
+       [Key]//PK
        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Identity
         public int DiscoId { get; set; }
         [Required,Display(Name =("شماره رزرو"))]
@@ -25,5 +25,9 @@ namespace Managerhotel.Models
         [Display(Name = "توضیحات ")]
         public string Description { get; set; }
         public virtual List<ApplicationUser> User { get; set; }
+   
+        public virtual int ApplicationUserUserId { get; set; }//foreng
+
+
     }
 }

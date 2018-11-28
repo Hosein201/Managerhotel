@@ -10,9 +10,36 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Managerhotel.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class CustomUserRole : IdentityUserRole<int> { }
+    public class CustomUserClaim : IdentityUserClaim<int> { }
+    public class CustomUserLogin : IdentityUserLogin<int> { }
+
+    public class CustomRole : IdentityRole<int, CustomUserRole>
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+        public CustomRole() { }
+        public CustomRole(string name) { Name = name; }
+    }
+
+    public class CustomUserStore : UserStore<ApplicationUser, CustomRole, int,
+        CustomUserLogin, CustomUserRole, CustomUserClaim>
+    {
+        public CustomUserStore(ManagerhotelDbContext context)
+            : base(context)
+        {
+        }
+    }
+
+    public class CustomRoleStore : RoleStore<CustomRole, int, CustomUserRole>
+    {
+        public CustomRoleStore(ManagerhotelDbContext context)
+            : base(context)
+        {
+        }
+    }
+    public class ApplicationUser : IdentityUser<int, CustomUserLogin, CustomUserRole,
+    CustomUserClaim>
+    {
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser, int> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             return userIdentity;
@@ -27,17 +54,18 @@ namespace Managerhotel.Models
         public string Gender { get; set; }
         [MaxLength(200)]
         public string PhotoFilePath { get; set; }
-        public  Massagesalon Massagesalon { get; set; }
-        public  Bodybuildingclub Bodybuildingclub { get; set; }
-        public  Disco Disco { get; set; }
-        public  CoffeeShop CoffeeShop { get; set; }
+        public virtual Massagesalon Massagesalon { get; set; }
+        public virtual Bodybuildingclub Bodybuildingclub { get; set; }
+        public virtual Disco Disco { get; set; }
+        public virtual CoffeeShop CoffeeShop { get; set; }
         
     }
 
-    public class ManagerhotelDbContext : IdentityDbContext<ApplicationUser>
+    public class ManagerhotelDbContext : IdentityDbContext<ApplicationUser, CustomRole,
+    int, CustomUserLogin, CustomUserRole, CustomUserClaim> 
     {
         public ManagerhotelDbContext()
-            : base("ManagerConnection", throwIfV1Schema: false)
+            : base("ManagerConnection")
         {
         }
         public virtual DbSet<Bodybuildingclub> Bodybuildingclub { get; set; }
