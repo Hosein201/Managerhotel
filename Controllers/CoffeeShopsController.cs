@@ -27,15 +27,16 @@ namespace Managerhotel.Controllers
         // GET: CoffeeShops/Details/5
         public ActionResult Details(int? id)
         {
+            id = User.Identity.GetUserId<int>();//getuserid
             if (id == null)
             {
-                Console.WriteLine("äsdhaisdaishdhasdhas");
+               
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             CoffeeShop coffeeShop = db.CoffeeShop.Find(id);
             if (coffeeShop == null)
             {
-                return HttpNotFound();
+                return View("~/Views/CoffeeShops/Create.cshtml");
             }
             return View(coffeeShop);
         }

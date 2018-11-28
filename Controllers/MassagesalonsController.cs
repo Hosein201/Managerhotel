@@ -25,6 +25,7 @@ namespace Managerhotel.Controllers
         // GET: Massagesalons/Details/5
         public ActionResult Details(int? id)
         {
+            id = User.Identity.GetUserId<int>();//getuserid
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -32,7 +33,7 @@ namespace Managerhotel.Controllers
             Massagesalon massagesalon = db.Massagesalon.Find(id);
             if (massagesalon == null)
             {
-                return HttpNotFound();
+                return View("~/Views/Massagesalons/Create.cshtml");
             }
             return View(massagesalon);
         }

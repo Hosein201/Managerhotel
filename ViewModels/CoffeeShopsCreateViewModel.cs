@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Managerhotel.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace Managerhotel.ViewModels
     public class CoffeeShopsCreateViewModel
     {
         [MaxLength(100)]
-        [Display(Name = "نام غذا ")] 
+        [Display(Name = "نام غذا ")]
         public string Eating { get; set; }
 
-        [DataType(DataType.Date) ]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "تاریخ حضور")]
         public DateTime Attendancedate { get; set; }//زمان حضور
@@ -24,6 +25,8 @@ namespace Managerhotel.ViewModels
         [MaxLength(400)]
         [Display(Name = "سفارشات دیگر ")]
         public string Description { get; set; }
-    }
+       // public ApplicationUser MyProperty { get; set; }
 
+    }
 }
+   

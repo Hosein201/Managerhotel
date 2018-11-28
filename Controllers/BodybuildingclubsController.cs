@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Managerhotel.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Managerhotel.Controllers
 {
@@ -24,6 +25,8 @@ namespace Managerhotel.Controllers
         // GET: Bodybuildingclubs/Details/5
         public ActionResult Details(int? id)
         {
+            id = User.Identity.GetUserId<int>();//getuserid
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -31,7 +34,7 @@ namespace Managerhotel.Controllers
             Bodybuildingclub bodybuildingclub = db.Bodybuildingclub.Find(id);
             if (bodybuildingclub == null)
             {
-                return HttpNotFound();
+                return View("~/Views/Bodybuildingclubs/Create.cshtml");
             }
             return View(bodybuildingclub);
         }

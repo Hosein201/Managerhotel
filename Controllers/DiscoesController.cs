@@ -25,6 +25,8 @@ namespace Managerhotel.Controllers
         // GET: Discoes/Details/5
         public ActionResult Details(int? id)
         {
+            id = User.Identity.GetUserId<int>();//getuserid
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -32,7 +34,7 @@ namespace Managerhotel.Controllers
             Disco disco = db.Disco.Find(id);
             if (disco == null)
             {
-                return HttpNotFound();
+                return View("~/Views/Discoes/Create.cshtml");
             }
             return View(disco);
         }
