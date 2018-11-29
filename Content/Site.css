@@ -88,13 +88,10 @@ img {
 .text-justify {
     text-align: justify;
 }
-#btnn {
-    color:#ccc!important;
+.btnn {
+    color: #ccc !important;
 }
-a {
-    color: #fed136;
-    text-decoration: none;
-}
+
 
 .container-fluid {
     padding-right: 0px !important;

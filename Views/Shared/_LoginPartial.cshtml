@@ -4,22 +4,26 @@
     <div class="row nav navbar-nav navbar-left  yellowcoloertext">
        
         <form method="post" action="@Url.Action("LogOff", "Account")">
-            <a class="nav-link dropdown-toggle   coloertext" data-toggle="dropdown">رزرو های: </a>
-            <div class="dropdown-menu">
-                <ul>
-                    <li class="dropdown-item yellowcoloertext">@Html.ActionLink("کافی شاپ", "Details", "CoffeeShops")</li>
-                    <li class="dropdown-item yellowcoloertext">@Html.ActionLink("سالن ماساژ", "Details", "Massagesalons")</li>
-                    <li class="dropdown-item yellowcoloertext">@Html.ActionLink("دیسکو", "Details", "Discoes")</li>
-                    <li class="dropdown-item yellowcoloertext">@Html.ActionLink("باشگاه بدن سازی", "Details", "Bodybuildingclubs")</li>
-                </ul>
-            </div>
-            @User.Identity.GetUserName()
+            <div class="navbar-collapse nav navbar-nav collapse">
+             
+                    <a class="nav-link dropdown-toggle   coloertext" data-toggle="dropdown">رزرو های: </a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li class="dropdown-item yellowcoloertext">@Html.ActionLink("کافی شاپ", "Details", "CoffeeShops")</li>
+                            <li class="dropdown-item yellowcoloertext">@Html.ActionLink("سالن ماساژ", "Details", "Massagesalons")</li>
+                            <li class="dropdown-item yellowcoloertext">@Html.ActionLink("دیسکو", "Details", "Discoes")</li>
+                            <li class="dropdown-item yellowcoloertext">@Html.ActionLink("باشگاه بدن سازی", "Details", "Bodybuildingclubs")</li>
+                        </ul>
+                    </div>
+                    @User.Identity.GetUserName()
 
-            @Html.AntiForgeryToken()
-            <button type="submit" class="btn btn-sm btn-warning navbar-btn">
-                <span class="fa fa-power-off "></span>
-                خروج
-            </button>
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-sm btn-warning navbar-btn">
+                        <span class="fa fa-power-off "></span>
+                        خروج
+                    </button>
+                
+            </div>
 
         </form>
     </div>

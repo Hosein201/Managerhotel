@@ -56,13 +56,14 @@ namespace Managerhotel.Models
         public string PhotoFilePath { get; set; }
         public virtual Massagesalon Massagesalon { get; set; }
         public virtual Bodybuildingclub Bodybuildingclub { get; set; }
-        public virtual Disco Disco { get; set; }
+        public virtual Disco Disco { get; set; } 
         public virtual CoffeeShop CoffeeShop { get; set; }
-        
+       
+
     }
 
     public class ManagerhotelDbContext : IdentityDbContext<ApplicationUser, CustomRole,
-    int, CustomUserLogin, CustomUserRole, CustomUserClaim> 
+    int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         public ManagerhotelDbContext()
             : base("ManagerConnection")
@@ -72,7 +73,7 @@ namespace Managerhotel.Models
         public virtual DbSet<Massagesalon> Massagesalon { get; set; }
         public virtual DbSet<Disco> Disco { get; set; }
         public virtual DbSet<CoffeeShop> CoffeeShop { get; set; }
-        
+
 
 
         public static ManagerhotelDbContext Create()
@@ -83,7 +84,22 @@ namespace Managerhotel.Models
         //{
         //    base.OnModelCreating(modelBuilder); //Facilities
 
-
+        //    modelBuilder.Entity<ApplicationUser>()
+        //        .HasRequired<CoffeeShop>(c => c.CoffeeShop)
+        //        .WithMany(u => u.User)
+        //        .HasForeignKey(f => f.CoffeeShop);
+        //    modelBuilder.Entity<ApplicationUser>()
+        //        .HasRequired<Bodybuildingclub>(b => b.Bodybuildingclub)
+        //        .WithMany(u => u.User)
+        //        .HasForeignKey(f => f.Bodybuildingclub);
+        //    modelBuilder.Entity<ApplicationUser>()
+        //        .HasRequired<Disco>(d => d.Disco)
+        //        .WithMany(u => u.User)
+        //        .HasForeignKey(f => f.Disco);
+        //    modelBuilder.Entity<ApplicationUser>()
+        //        .HasRequired<Massagesalon>(m => m.Massagesalon)
+        //        .WithMany(u => u.User)
+        //        .HasForeignKey(f => f.Massagesalon);
 
         //    modelBuilder.Entity<Bodybuildingclub>()
         //        .HasMany(a => a.ApplicationUser)
@@ -105,5 +121,6 @@ namespace Managerhotel.Models
         //       .WithRequired(m=> m.Massagesalon)
         //       .HasForeignKey(a => a.Id);
         //}
+
     }
 }

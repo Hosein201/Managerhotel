@@ -1,20 +1,21 @@
 ﻿@model Managerhotel.Models.Bodybuildingclub
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "مشخصات رزرو شما ";
 }
 
-<h2>Details</h2>
+
 
 <div>
-    <h4>Bodybuildingclub</h4>
-    <hr />
-    <dl class="dl-horizontal">
+    <center>
+        <h4 class="yellowcoloertext">@ViewBag.Title</h4>
+    </center>
+    <dl class="form-horizontal col-md-6 yellowcoloertext">
         <dt>
             @Html.DisplayNameFor(model => model.Attendancedate)
         </dt>
 
-        <dd>
+        <dd class="coloertext">
             @Html.DisplayFor(model => model.Attendancedate)
         </dd>
 
@@ -22,7 +23,7 @@
             @Html.DisplayNameFor(model => model.Attendancetime)
         </dt>
 
-        <dd>
+        <dd class="coloertext">
             @Html.DisplayFor(model => model.Attendancetime)
         </dd>
 
@@ -30,13 +31,18 @@
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
-        <dd>
+        <dd class="coloertext">
             @Html.DisplayFor(model => model.Description)
         </dd>
 
     </dl>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-default" id="btnn">
+                @Html.ActionLink("بازگشت", "Index", "Bodybuildingclubs", new { @type = "submit" })
+            </button>
+
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BodybuildingclubId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

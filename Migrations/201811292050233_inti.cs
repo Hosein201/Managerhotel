@@ -15,9 +15,11 @@ namespace Managerhotel.Migrations
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
-                        ApplicationUserUserId = c.Int(nullable: false),
+                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.BodybuildingclubId);
+                .PrimaryKey(t => t.BodybuildingclubId)
+                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
+                .Index(t => t.User_Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -42,19 +44,31 @@ namespace Managerhotel.Migrations
                         UserName = c.String(nullable: false, maxLength: 256),
                         Bodybuildingclub_BodybuildingclubId = c.Int(),
                         CoffeeShop_CoffeeShopId = c.Int(),
+                        CoffeeShop_CoffeeShopId1 = c.Int(),
                         Disco_DiscoId = c.Int(),
+                        Disco_DiscoId1 = c.Int(),
                         Massagesalon_MassagesalonId = c.Int(),
+                        Massagesalon_MassagesalonId1 = c.Int(),
+                        Bodybuildingclub_BodybuildingclubId1 = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("Facilities.Bodybuildingclub", t => t.Bodybuildingclub_BodybuildingclubId)
                 .ForeignKey("Facilities.CoffeeShop", t => t.CoffeeShop_CoffeeShopId)
+                .ForeignKey("Facilities.CoffeeShop", t => t.CoffeeShop_CoffeeShopId1)
                 .ForeignKey("Facilities.Disco", t => t.Disco_DiscoId)
+                .ForeignKey("Facilities.Disco", t => t.Disco_DiscoId1)
                 .ForeignKey("Facilities.Massagesalon", t => t.Massagesalon_MassagesalonId)
+                .ForeignKey("Facilities.Massagesalon", t => t.Massagesalon_MassagesalonId1)
+                .ForeignKey("Facilities.Bodybuildingclub", t => t.Bodybuildingclub_BodybuildingclubId1)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex")
                 .Index(t => t.Bodybuildingclub_BodybuildingclubId)
                 .Index(t => t.CoffeeShop_CoffeeShopId)
+                .Index(t => t.CoffeeShop_CoffeeShopId1)
                 .Index(t => t.Disco_DiscoId)
-                .Index(t => t.Massagesalon_MassagesalonId);
+                .Index(t => t.Disco_DiscoId1)
+                .Index(t => t.Massagesalon_MassagesalonId)
+                .Index(t => t.Massagesalon_MassagesalonId1)
+                .Index(t => t.Bodybuildingclub_BodybuildingclubId1);
             
             CreateTable(
                 "dbo.AspNetUserClaims",
@@ -79,9 +93,11 @@ namespace Managerhotel.Migrations
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
-                        ApplicationUserUserId = c.Int(nullable: false),
+                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.CoffeeShopId);
+                .PrimaryKey(t => t.CoffeeShopId)
+                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
+                .Index(t => t.User_Id);
             
             CreateTable(
                 "Facilities.Disco",
@@ -93,9 +109,11 @@ namespace Managerhotel.Migrations
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
-                        ApplicationUserUserId = c.Int(nullable: false),
+                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.DiscoId);
+                .PrimaryKey(t => t.DiscoId)
+                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
+                .Index(t => t.User_Id);
             
             CreateTable(
                 "dbo.AspNetUserLogins",
@@ -118,9 +136,11 @@ namespace Managerhotel.Migrations
                         Attendancedate = c.DateTime(nullable: false),
                         Attendancetime = c.DateTime(nullable: false),
                         Description = c.String(maxLength: 400),
-                        ApplicationUserUserId = c.Int(nullable: false),
+                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.MassagesalonId);
+                .PrimaryKey(t => t.MassagesalonId)
+                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
+                .Index(t => t.User_Id);
             
             CreateTable(
                 "dbo.AspNetUserRoles",
@@ -150,23 +170,39 @@ namespace Managerhotel.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("Facilities.Bodybuildingclub", "User_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.AspNetUsers", "Bodybuildingclub_BodybuildingclubId1", "Facilities.Bodybuildingclub");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.AspNetUsers", "Massagesalon_MassagesalonId1", "Facilities.Massagesalon");
+            DropForeignKey("Facilities.Massagesalon", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "Massagesalon_MassagesalonId", "Facilities.Massagesalon");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.AspNetUsers", "Disco_DiscoId1", "Facilities.Disco");
+            DropForeignKey("Facilities.Disco", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "Disco_DiscoId", "Facilities.Disco");
+            DropForeignKey("dbo.AspNetUsers", "CoffeeShop_CoffeeShopId1", "Facilities.CoffeeShop");
+            DropForeignKey("Facilities.CoffeeShop", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "CoffeeShop_CoffeeShopId", "Facilities.CoffeeShop");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "Bodybuildingclub_BodybuildingclubId", "Facilities.Bodybuildingclub");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
+            DropIndex("Facilities.Massagesalon", new[] { "User_Id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
+            DropIndex("Facilities.Disco", new[] { "User_Id" });
+            DropIndex("Facilities.CoffeeShop", new[] { "User_Id" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
+            DropIndex("dbo.AspNetUsers", new[] { "Bodybuildingclub_BodybuildingclubId1" });
+            DropIndex("dbo.AspNetUsers", new[] { "Massagesalon_MassagesalonId1" });
             DropIndex("dbo.AspNetUsers", new[] { "Massagesalon_MassagesalonId" });
+            DropIndex("dbo.AspNetUsers", new[] { "Disco_DiscoId1" });
             DropIndex("dbo.AspNetUsers", new[] { "Disco_DiscoId" });
+            DropIndex("dbo.AspNetUsers", new[] { "CoffeeShop_CoffeeShopId1" });
             DropIndex("dbo.AspNetUsers", new[] { "CoffeeShop_CoffeeShopId" });
             DropIndex("dbo.AspNetUsers", new[] { "Bodybuildingclub_BodybuildingclubId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("Facilities.Bodybuildingclub", new[] { "User_Id" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("Facilities.Massagesalon");

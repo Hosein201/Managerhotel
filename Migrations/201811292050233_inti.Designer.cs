@@ -13,7 +13,7 @@ namespace Managerhotel.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201811281657580_inti"; }
+            get { return "201811292050233_inti"; }
         }
         
         string IMigrationMetadata.Source

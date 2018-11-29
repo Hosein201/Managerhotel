@@ -34,7 +34,7 @@ namespace Managerhotel.Controllers
             Disco disco = db.Disco.Find(id);
             if (disco == null)
             {
-                return View("~/Views/Discoes/Create.cshtml");
+                return Content("رزرو برای شما ثبت نشده است ");
             }
             return View(disco);
         }
@@ -58,7 +58,7 @@ namespace Managerhotel.Controllers
                 disco.Drinking = ViewModel.Drinking;
                 disco.ReservationnumberDc = Reservation;
                 disco.Attendancedate = ViewModel.Attendancedate;
-                disco.Attendancedate = ViewModel.Attendancetime;
+                disco.Attendancetime = ViewModel.Attendancetime;
                 disco.Description = ViewModel.Description;
                 db.Disco.Add(disco);
                 db.SaveChanges();

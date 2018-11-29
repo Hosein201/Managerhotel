@@ -24,9 +24,10 @@ namespace Managerhotel.Models
         [MaxLength(400)]
         [Display(Name = "توضیحات ")]
         public string Description { get; set; }
-        public virtual List<ApplicationUser> User { get; set; }
-   
-        public virtual int ApplicationUserUserId { get; set; }//foreng
+        public virtual List<ApplicationUser> ApplicationUsers { get; set; }
+        public virtual ApplicationUser User { get; set; }
+
+
 
 
     }
